@@ -1,10 +1,20 @@
-import React, { useState } from "react";
-import useFetch from "../hooks/useFetch";
+import React from "react";
+import ListJokes from "./ListJokes";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+    faArrowUp,
+    faArrowDown,
+    faLaugh,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faArrowUp, faArrowDown, faLaugh);
 
 const App = (): JSX.Element => {
-    const state = useFetch();
-    console.log(state);
-    return <div>App</div>;
+    return (
+        <div>
+            <ListJokes />
+        </div>
+    );
 };
 
 export default App;
