@@ -1,6 +1,5 @@
 import { useReducer, useEffect } from "react";
 import axios from "axios";
-import useLocalStorageState from "./useLocalStorageState";
 
 export interface JokeInterface {
     joke: string;
@@ -38,12 +37,8 @@ function fetchReducer(state: AppState, action: Action): AppState {
 }
 
 const useFetch = (initialState: AppState): [AppState, () => void] => {
-    const [stateLocal, setStateLocal] = useLocalStorageState(
-        "jokesState",
-        initialState,
-    );
-    const [state, dispatch] = useReducer(fetchReducer, stateLocal);
-    const ids: string[] = stateLocal.jokes.reduce(
+    const [state, dispatch] = useReducer(fetchReducer, initialState);
+    const ids: string[] = state.jokes.reduce(
         (acc: string[], next: JokeInterface): string[] => {
             acc.push(next.id);
             return acc;
@@ -83,6 +78,7 @@ const useFetch = (initialState: AppState): [AppState, () => void] => {
             dispatch({ type: "FETCH_FAILURE" });
         }
     }
+
     useEffect((): void => {
         const { jokes } = JSON.parse(window.localStorage.getItem("jokesState"));
 
@@ -91,11 +87,7 @@ const useFetch = (initialState: AppState): [AppState, () => void] => {
         }
     }, []);
 
-    useEffect((): void => {
-        setStateLocal(state);
-    }, [state]);
-
-    return [stateLocal, fetchJokes];
+    return [state, fetchJokes];
 };
 
 export default useFetch;

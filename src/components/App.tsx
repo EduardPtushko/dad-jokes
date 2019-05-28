@@ -16,11 +16,23 @@ const App = (): JSX.Element => {
         <div>
             <Global
                 styles={css`
+                    :root {
+                        box-sizing: border-box;
+                    }
+                    *,
+                    *::before,
+                    *::after {
+                        box-sizing: inherit;
+                    }
                     body {
                         margin: 0;
                         padding: 0;
                         background-image: url(${back});
                         background-size: cover;
+                        background-position: center;
+                        color: #969696;
+                        font-family: "Noto Sans HK", "Times New Roman",
+                            sans-serif;
                     }
                 `}
             />
