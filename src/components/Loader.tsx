@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { loaderAnimation } from "./styles/keyframes";
+import { loaderAnimation } from "../styles/keyframes";
 
 const base = css`
     position: relative;

@@ -1,6 +1,5 @@
 import React from "react";
 import { css, Global } from "@emotion/core";
-import back from "../assets/images/back.png";
 import ListJokes from "./ListJokes";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -27,9 +26,13 @@ const App = (): JSX.Element => {
                     body {
                         margin: 0;
                         padding: 0;
-                        background-image: url(${back});
-                        background-size: cover;
-                        background-position: center;
+                        height: 100vh;
+                        background-image: linear-gradient(
+                            -45deg,
+                            #b1e2f8 50%,
+                            #f06091 50%
+                        );
+
                         color: #969696;
                         font-family: "Noto Sans HK", "Times New Roman",
                             sans-serif;

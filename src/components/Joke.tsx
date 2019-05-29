@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { css, jsx } from "@emotion/core";
 import EmojiRating from "./EmojiRating";
-import { base, ratingBlock, ratingStyles } from "./styles/JokeStyles";
+import { base, ratingBlock, ratingStyles } from "../styles/JokeStyles";
 
 interface Props {
     joke: string;

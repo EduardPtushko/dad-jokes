@@ -1,4 +1,5 @@
 import { css } from "@emotion/core";
+import { moveUp, moveDown } from "../styles/keyframes";
 
 export const base = css`
     display: flex;
@@ -32,11 +33,14 @@ export const ratingBlock = css`
     .arrow-up {
         &:hover {
             color: #21d021;
+            animation: ${moveUp} 1s ease-in;
         }
     }
+
     .arrow-down {
         &:hover {
             color: #ef5454;
+            animation: ${moveDown} 1s ease-in;
         }
     }
 `;

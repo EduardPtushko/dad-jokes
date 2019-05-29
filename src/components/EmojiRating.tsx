@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { spin } from "../styles/keyframes";
 
 interface Props {
     rating: number;
@@ -55,7 +56,7 @@ const EmojiRating = ({ rating }: Props): JSX.Element => {
             margin-left: 0.5em;
 
             &:hover {
-                transform: rotate(20deg);
+                animation: ${spin} 1s ease-in-out;
             }
         }
     `;

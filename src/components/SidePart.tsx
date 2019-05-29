@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import SvgGrinTears from "./SvgGrinTears";
-import { base, emoji, btn } from "./styles/SideStyles";
+import { base, emoji, btn } from "../styles/SideStyles";
 
 interface Props {
     fetchJokes(): void;
