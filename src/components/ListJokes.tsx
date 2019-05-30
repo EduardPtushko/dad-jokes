@@ -7,7 +7,7 @@ import { jsx, css } from "@emotion/core";
 
 const base = css`
     width: 60em;
-    margin: 4em auto 0;
+    margin: 0 auto;
     height: 80vh;
     display: flex;
     align-items: center;

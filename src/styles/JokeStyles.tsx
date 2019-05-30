@@ -32,14 +32,14 @@ export const ratingBlock = css`
     }
     .arrow-up {
         &:hover {
-            color: #21d021;
+            color: #b1e2f8;
             animation: ${moveUp} 1s ease-in;
         }
     }
 
     .arrow-down {
         &:hover {
-            color: #ef5454;
+            color: #f05f90;
             animation: ${moveDown} 1s ease-in;
         }
     }
@@ -51,7 +51,7 @@ export const ratingStyles = css`
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    line-height: 2em;
+    line-height: 2.1em;
     margin: 0 0.3em;
     box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.2),
         0px 5px 15px 0 rgba(0, 0, 0, 0.19);

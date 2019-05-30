@@ -3,6 +3,7 @@ import { laughing } from "./keyframes";
 
 export const base = css`
     width: 25%;
+
     background-color: #9574cc;
     height: 100%;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -10,9 +11,13 @@ export const base = css`
     color: white;
     text-align: center;
 
+    h1 {
+        font-size: 2.1rem;
+    }
+
     h1 > span + span {
         font-family: "Satisfy";
-        margin-left: 0.25em;
+        margin-left: 0.1em;
         font-size: 1.15em;
         font-weight: 300;
     }
