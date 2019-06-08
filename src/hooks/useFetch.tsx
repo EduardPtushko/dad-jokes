@@ -80,9 +80,14 @@ const useFetch = (initialState: AppState): [AppState, () => void] => {
     }
 
     useEffect((): void => {
-        const { jokes } = JSON.parse(window.localStorage.getItem("jokesState"));
+        function hasItem(key: string): boolean {
+            return localStorage.getItem(key) !== null;
+        }
+        const { jokes } = JSON.parse(
+            window.localStorage.getItem("jokesState") || String(initialState),
+        );
 
-        if (!window.localStorage.getItem("jokesState") || jokes.length === 0) {
+        if (!hasItem("jokesState") || jokes.length === 0) {
             fetchJokes();
         }
     }, []);
