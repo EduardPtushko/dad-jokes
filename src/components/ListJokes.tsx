@@ -1,9 +1,9 @@
 /** @jsx jsx */
+import { jsx, css } from "@emotion/core";
 import useJokeState from "../hooks/useJokeState";
 import SidePart from "./SidePart";
 import Joke from "./Joke";
 import Loader from "./Loader";
-import { jsx, css } from "@emotion/core";
 
 const base = css`
     width: 60em;

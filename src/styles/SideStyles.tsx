@@ -3,7 +3,6 @@ import { laughing } from "./keyframes";
 
 export const base = css`
     width: 25%;
-
     background-color: #9574cc;
     height: 100%;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),

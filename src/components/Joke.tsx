@@ -42,6 +42,7 @@ const Joke = ({ joke, rating, id, changeRating }: Props): JSX.Element => {
 
         return `hsl(${h},100%,50%)`;
     }
+
     return (
         <div css={base}>
             <span css={ratingBlock}>

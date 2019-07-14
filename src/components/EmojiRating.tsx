@@ -46,7 +46,10 @@ const EmojiRating = ({ rating }: Props): JSX.Element => {
     }
 
     const base = css`
+        height: 3em;
+
         span {
+            line-height: 1.15;
             font-size: 3rem;
             text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2),
                 0px 5px 15px rgba(0, 0, 0, 0.19);
