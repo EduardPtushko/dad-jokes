@@ -1,17 +1,7 @@
 import { useReducer, useEffect } from "react";
+import { JokeInterface, AppState } from "./useJokeState";
 import axios from "axios";
 
-export interface JokeInterface {
-    joke: string;
-    rating: number;
-    id: string;
-}
-
-export interface AppState {
-    jokes: JokeInterface[];
-    isLoading: boolean;
-    isError: boolean;
-}
 type Action =
     | { type: "FETCH_SUCCESS"; payload: JokeInterface[] }
     | { type: "FETCH_INIT" }
@@ -46,7 +36,7 @@ const useFetch = (initialState: AppState): [AppState, () => void] => {
         [],
     );
 
-    async function fetchJokes(): Promise<T> {
+    async function fetchJokes(): Promise<any> {
         dispatch({ type: "FETCH_INIT" });
         try {
             let data: JokeInterface[] = [];

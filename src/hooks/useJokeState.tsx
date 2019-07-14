@@ -35,7 +35,9 @@ const useJokeState = (
                     : joke;
             },
         );
-        jokes = jokes.sort((a, b): number => b.rating - a.rating);
+        jokes = jokes.sort(
+            (a: JokeInterface, b: JokeInterface): number => b.rating - a.rating,
+        );
         setStateLocal({ ...stateLocal, jokes });
     }
 

@@ -4,6 +4,7 @@ import useJokeState from "../hooks/useJokeState";
 import SidePart from "./SidePart";
 import Joke from "./Joke";
 import Loader from "./Loader";
+import { useTrail } from "react-spring";
 
 const base = css`
     width: 60em;
@@ -30,6 +31,13 @@ const ListJokes = (): JSX.Element => {
         fetchJokes,
         changeRating,
     ] = useJokeState(initialState);
+    const config = { mass: 5, tension: 2000, friction: 200 };
+
+    const trail = useTrail(jokes.length, {
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        config,
+    });
 
     if (isLoading) {
         return <Loader />;
@@ -59,14 +67,15 @@ const ListJokes = (): JSX.Element => {
         <div css={base}>
             <SidePart fetchJokes={fetchJokes} />
             <div css={jokesList}>
-                {jokes.map(
-                    ({ id, joke, rating }): JSX.Element => (
+                {trail.map(
+                    (props, index): JSX.Element => (
                         <Joke
-                            key={id}
-                            id={id}
+                            styles={props}
+                            key={jokes[index].id}
+                            id={jokes[index].id}
                             changeRating={changeRating}
-                            joke={joke}
-                            rating={rating}
+                            joke={jokes[index].joke}
+                            rating={jokes[index].rating}
                         />
                     ),
                 )}

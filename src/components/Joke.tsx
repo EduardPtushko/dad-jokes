@@ -3,15 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { css, jsx } from "@emotion/core";
 import EmojiRating from "./EmojiRating";
 import { base, ratingBlock, ratingStyles } from "../styles/JokeStyles";
+import { animated } from "react-spring";
 
 interface Props {
     joke: string;
     rating: number;
     id: string;
+    styles: any;
     changeRating: (dest: string, id: string) => void;
 }
 
-const Joke = ({ joke, rating, id, changeRating }: Props): JSX.Element => {
+const Joke = ({
+    joke,
+    rating,
+    id,
+    changeRating,
+    styles,
+}: Props): JSX.Element => {
     function changeColor(): string {
         let h;
         if (rating === 0) {
@@ -44,7 +52,7 @@ const Joke = ({ joke, rating, id, changeRating }: Props): JSX.Element => {
     }
 
     return (
-        <div css={base}>
+        <animated.div css={base} style={styles}>
             <span css={ratingBlock}>
                 <button
                     onClick={(): void => changeRating("up", id)}
@@ -70,7 +78,7 @@ const Joke = ({ joke, rating, id, changeRating }: Props): JSX.Element => {
             </span>
             <span className="joke-text">{joke}</span>
             <EmojiRating rating={rating} />
-        </div>
+        </animated.div>
     );
 };
 

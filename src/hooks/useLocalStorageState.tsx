@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AppState } from "./useFetch";
+import { AppState } from "./useJokeState";
 
 const useLocalStorageState = (
     key: string,
